@@ -50,16 +50,16 @@ def main():
         st.session_state.raw_json = None
 
     # Title
-    st.write("# Haystack Demo - Explore the world")
-    st.markdown("""
-This demo takes its data from a selection of Wikipedia pages crawled in November 2021 on the topic of
-
-<h3 style='text-align:center;padding: 0 0 1rem;'>Countries and capital cities</h3>
-
-Ask any question on this topic and see if Haystack can find the correct answer to your query!
-
-*Note: do not use keywords, but full-fledged questions.* The demo is not optimized to deal with keyword queries and might misunderstand you.
-""", unsafe_allow_html=True)
+    st.write("# Haystack Demo")
+#    st.markdown("""
+#This demo takes its data from a selection of Wikipedia pages crawled in November 2021 on the topic of
+#
+#<h3 style='text-align:center;padding: 0 0 1rem;'>Countries and capital cities</h3>
+#
+#Ask any question on this topic and see if Haystack can find the correct answer to your query!
+#
+#*Note: do not use keywords, but full-fledged questions.* The demo is not optimized to deal with keyword queries and might misunderstand you.
+#""", unsafe_allow_html=True)
 
     # Sidebar
     st.sidebar.header("Options")
@@ -119,7 +119,6 @@ Ask any question on this topic and see if Haystack can find the correct answer t
         <hr />
         <h4>Built with <a href="https://www.deepset.ai/haystack">Haystack</a>{hs_version}</h4>
         <p>Get it on <a href="https://github.com/deepset-ai/haystack/">GitHub</a> &nbsp;&nbsp; - &nbsp;&nbsp; Read the <a href="https://haystack.deepset.ai/overview/intro">Docs</a></p>
-        <small>Data crawled from <a href="https://en.wikipedia.org/wiki/Category:Lists_of_countries_by_continent">Wikipedia</a> in November 2021.<br />See the <a href="https://creativecommons.org/licenses/by-sa/3.0/">License</a> (CC BY-SA 3.0).</small>
     </div>
     """, unsafe_allow_html=True)
 
