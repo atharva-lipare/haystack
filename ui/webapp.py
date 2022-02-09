@@ -6,6 +6,7 @@ import pandas as pd
 from json import JSONDecodeError
 from pathlib import Path
 import streamlit as st
+import streamlit.components.v1 as components
 from annotated_text import annotation
 from markdown import markdown
 
@@ -60,6 +61,36 @@ def main():
 #
 #*Note: do not use keywords, but full-fledged questions.* The demo is not optimized to deal with keyword queries and might misunderstand you.
 #""", unsafe_allow_html=True)
+
+    components.html("""
+    <html>
+    <body>
+        <script>!(function () {
+            let e = document.createElement("script"),
+              t = document.head || document.getElementsByTagName("head")[0];
+            (e.src =
+              "https://cdn.jsdelivr.net/npm/rasa-webchat@1.x.x/lib/index.js"),
+              // Replace 1.x.x with the version that you want
+              (e.async = !0),
+              (e.onload = () => {
+                window.WebChat.default(
+                  {
+                    initPayload: '/greet',
+                    customData: { language: "en" },
+                    socketUrl: "http://localhost:5005",
+                    title: 'Chatbot for Support Engineers',
+                    subtitle: 'Retrieve relevant docs faster'
+                    // add other props here
+                  },
+                  null
+                );
+              }),
+              t.insertBefore(e, t.firstChild);
+          })();
+          </script>
+    </body>
+</html>
+    """, height = 600)
 
     # Sidebar
     st.sidebar.header("Options")
