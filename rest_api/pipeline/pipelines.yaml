@@ -5,6 +5,7 @@ components:    # define all the building-blocks for Pipeline
     type: ElasticsearchDocumentStore
     params:
       host: localhost
+      embedding_dim: 512
   - name: Retriever
     type: ElasticsearchRetriever
     params:
